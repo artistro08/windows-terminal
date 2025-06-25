@@ -27,7 +27,7 @@
             "description": "Path to Windows Terminal settings.json file",
             "type": "textfield",
             "default": "C:\\Users\\Admin\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json",
-            "required": false
+            "required": true
         }
     ],
     "dependencies": {
