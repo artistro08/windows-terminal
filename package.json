@@ -1,0 +1,53 @@
+{
+    "$schema": "https://www.raycast.com/schemas/extension.json",
+    "name": "windows-terminal",
+    "title": "Windows Terminal Profiles",
+    "description": "Open a Windows Terminal Profile",
+    "icon": "icon.png",
+    "author": "putttim",
+    "categories": [
+        "Developer Tools"
+    ],
+    "license": "MIT",
+    "platforms": [
+        "windows"
+    ],
+    "commands": [
+        {
+            "name": "open-profile",
+            "title": "Open Windows Terminal Profile",
+            "description": "Open a Windows Terminal Profile",
+            "mode": "view"
+        }
+    ],
+    "preferences": [
+        {
+            "name": "settingsPath",
+            "title": "Windows Terminal Settings Path",
+            "description": "Path to Windows Terminal settings.json file",
+            "type": "textfield",
+            "default": "C:\\Users\\Admin\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json",
+            "required": false
+        }
+    ],
+    "dependencies": {
+        "@raycast/api": "^1.40.0",
+        "@raycast/utils": "^1.4.8"
+    },
+    "devDependencies": {
+        "@raycast/eslint-config": "^1.0.6",
+        "@types/node": "18.18.4",
+        "@types/react": "18.2.27",
+        "eslint": "^8.51.0",
+        "prettier": "^3.0.3",
+        "react": "^19.1.0",
+        "typescript": "^5.2.2"
+    },
+    "scripts": {
+        "build": "ray build -e dist",
+        "dev": "ray develop",
+        "fix-lint": "ray lint --fix",
+        "lint": "ray lint",
+        "publish": "ray publish"
+    }
+}
