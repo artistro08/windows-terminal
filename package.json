@@ -28,6 +28,24 @@
             "type": "textfield",
             "default": "C:\\Users\\Admin\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json",
             "required": true
+        },
+        {
+            "name": "sortOrder",
+            "title": "Profile Sort Order",
+            "description": "Choose how the sorting order of the profiles is determined",
+            "type": "dropdown",
+            "required": false,
+            "default": "alphabetical",
+            "data": [
+                {
+                    "title": "Alphabetical",
+                    "value": "alphabetical"
+                },
+                {
+                    "title": "Settings Order",
+                    "value": "settings"
+                }
+            ]
         }
     ],
     "dependencies": {

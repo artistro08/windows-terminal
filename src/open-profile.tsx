@@ -24,6 +24,7 @@ interface WindowsTerminalSettings {
 
 interface Preferences {
     settingsPath: string
+    sortOrder: string
 }
 
 const preferences: Preferences = getPreferenceValues()
@@ -54,10 +55,14 @@ async function loadProfiles(): Promise<WindowsTerminalProfile[]> {
             return []
         }
 
-        // Filter profiles with names and sort by name
-        const availableProfiles = settings.profiles.list
-            .filter(profile => profile.name)
-            .sort((a, b) => a.name.localeCompare(b.name))
+        // only take profiles that has a name
+        let availableProfiles = settings.profiles.list.filter(profile => profile.name)
+
+        // Sort based on user preference
+        if (preferences.sortOrder === "alphabetical") {
+            availableProfiles = availableProfiles.sort((a, b) => a.name.localeCompare(b.name))
+        }
+        // If sortOrder is "settings", we can just maintain the original order
 
         await showToast({
             style: Toast.Style.Success,
