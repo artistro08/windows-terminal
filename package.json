@@ -46,6 +46,14 @@
                     "value": "settings"
                 }
             ]
+        },
+        {
+            "name": "quakeMode",
+            "title": "Quake Mode",
+            "description": "Open all profiles in Quake Mode",
+            "type": "checkbox",
+            "required": false,
+            "default": false
         }
     ],
     "dependencies": {

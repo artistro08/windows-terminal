@@ -32,7 +32,7 @@ const preferences: Preferences = getPreferenceValues()
 const username = process.env.USERNAME || "User"
 const defaultSettingsPath = `C:\\Users\\${username}\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\settings.json`
 const settingsPath = preferences.settingsPath || defaultSettingsPath
-const quakeMode = preferences.quakeMode ? '--window "_quake"' : ''
+const quakeMode = preferences.quakeMode ? '-w "_quake"' : ''
 
 async function loadProfiles(): Promise<WindowsTerminalProfile[]> {
     if (!existsSync(settingsPath)) {
@@ -89,10 +89,10 @@ async function openProfile(profile: WindowsTerminalProfile) {
 
         if (profile.guid) {
             // Use GUID (by right you can't have duplicate GUID or else WT will error)
-            command = `wt.exe -p "${profile.guid}" ${quakeMode}`
+            command = `wt.exe ${quakeMode} -p "${profile.guid}"` 
         } else {
             // Fall back to profile name
-            command = `wt.exe -p "${profile.name}"`
+            command = `wt.exe ${quakeMode} -p "${profile.name}"`
         }
 
         await execAsync(command)
