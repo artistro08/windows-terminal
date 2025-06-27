@@ -34,7 +34,7 @@
             "title": "Profile Sort Order",
             "description": "Choose how the sorting order of the profiles is determined",
             "type": "dropdown",
-            "required": false,
+            "required": true,
             "default": "alphabetical",
             "data": [
                 {
