@@ -11,7 +11,9 @@ type ExtensionPreferences = {
   /** Windows Terminal Settings Path - Path to Windows Terminal settings.json file */
   "settingsPath": string,
   /** Profile Sort Order - Choose how the sorting order of the profiles is determined */
-  "sortOrder": "alphabetical" | "settings"
+  "sortOrder": "alphabetical" | "settings",
+  /** Quake Mode - Open all profiles in Quake Mode */
+  "quakeMode": boolean
 }
 
 /** Preferences accessible in all the extension's commands */
