@@ -104,10 +104,10 @@ async function openProfile(profile: WindowsTerminalProfile) {
 
         if (profile.guid) {
             // Use GUID (by right you can't have duplicate GUID or else WT will error)
-            command = `wt.exe ${quakeMode} -p "${profile.guid}" -d "${homeDir}"` 
+            command = `start "" wt.exe ${quakeMode} -p "${profile.guid}" -d "${homeDir}"` 
         } else {
             // Fall back to profile name
-            command = `wt.exe ${quakeMode} -p "${profile.name}" -d "${homeDir}"`
+            command = `start "" wt.exe ${quakeMode} -p "${profile.name}" -d "${homeDir}"`
         }
 
         await execAsync(command)
